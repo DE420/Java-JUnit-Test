@@ -44,7 +44,7 @@ public class getNLByIDTest {
     // Test trường hợp lấy Nguyên Liệu với ID hợp lệ
     @Test
     public void testGetNLByID_ValidID() throws SQLException {
-        int validID = 1;  // Giả sử ID này tồn tại trong cơ sở dữ liệu
+        int validID = 101;  // Giả sử ID này tồn tại trong cơ sở dữ liệu
         try {
             con.setAutoCommit(false);
 
@@ -52,8 +52,8 @@ public class getNLByIDTest {
             ModelNguyenLieu result = getNLbyID(validID);
             Assert.assertNotNull("Không tìm thấy nguyên liệu!", result);
             Assert.assertEquals(validID, result.getId());
-            Assert.assertEquals("Nguyên Liệu 1", result.getTenNL());  // Dữ liệu giả định
-            Assert.assertEquals(100, result.getDonGia());  // Dữ liệu giả định
+            Assert.assertEquals("Thit heo", result.getTenNL());  // Dữ liệu giả định
+            Assert.assertEquals(50000, result.getDonGia());  // Dữ liệu giả định
             Assert.assertEquals("kg", result.getDvt());  // Dữ liệu giả định
 
         } finally {
