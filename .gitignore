@@ -1,0 +1,10 @@
+# Ignore everything
+*
+
+# Except the test folder
+!test/
+!test/**
+!.gitignore
+!src/
+!src/RTDRestaurant/
+!src/RTDRestaurant/**
