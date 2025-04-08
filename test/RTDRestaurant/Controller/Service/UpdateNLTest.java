@@ -165,8 +165,8 @@ public class UpdateNLTest {
     @Test
     public void testUpdateNguyenLieu_NameTooLong() throws SQLException {
         ModelNguyenLieu nl = new ModelNguyenLieu();
-        nl.setId(1);
-        nl.setTenNL("Gạo với tên dài hơn 20 ký tự");
+        nl.setId(100);
+        nl.setTenNL("Gạo với tên dài hơn 20 ký tựaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
         nl.setDonGia(10000);
         nl.setDvt("kg");
 
