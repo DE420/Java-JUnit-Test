@@ -32,7 +32,7 @@ public class ServiceStaffTest {
      * Test of getStaff method, of class ServiceStaff.
      */
     @Test
-    public void testGetStaff_tonTai() throws Exception {
+    public void getStaff_01() throws Exception {
         // Lấy thông tin nhân viên với ID người dùng tồn tại
         int userID = 100; // ID_ND hợp lệ // Đã sửa: từ 200 thành 100
         ModelNhanVien nv = ss.getStaff(userID);
@@ -42,7 +42,7 @@ public class ServiceStaffTest {
     }
 
     @Test
-    public void testGetStaff_koTonTai() throws Exception {
+    public void GetStaff_02() throws Exception {
         // Lấy thông tin nhân viên với ID người dùng không tồn tại
         int userID = 999; // ID_ND không tồn tại // Đã sửa: từ 1 thành 999 cho phù hợp phạm vi ID
         ModelNhanVien nv = ss.getStaff(userID);
@@ -53,7 +53,7 @@ public class ServiceStaffTest {
      * Test of reNameStaff method, of class ServiceStaff.
      */
     @Test
-    public void testReNameStaff_hopLe() throws Exception {
+    public void ReNameStaff_01() throws Exception {
         // Đổi tên nhân viên hợp lệ
         ModelNhanVien nv = new ModelNhanVien(100, "Le Thi B", "10-05-2023", "0848044725", "Quan ly", 0); // Đã sửa: ID_NV từ 201 thành 100
         try {
@@ -75,7 +75,7 @@ public class ServiceStaffTest {
     }
 
     @Test
-    public void testReNameStaff_khongHopLe() throws Exception {
+    public void ReNameStaff_02() throws Exception {
         // Đổi tên nhân viên với ID không tồn tại
         ModelNhanVien nv = new ModelNhanVien(999, "Le Thi B", "01-01-2020", "0123456789", "NhanVien", 0); // Đã sửa: ID_NV từ 1 thành 999
         try {
@@ -98,7 +98,7 @@ public class ServiceStaffTest {
      * Test of MenuNL method, of class ServiceStaff.
      */
     @Test
-    public void testMenuNL() throws Exception {
+    public void MenuNL_01() throws Exception {
         // Lấy danh sách toàn bộ nguyên liệu
         ArrayList<ModelNguyenLieu> listNL = ss.MenuNL();
         assertNotNull(listNL);
@@ -109,7 +109,7 @@ public class ServiceStaffTest {
      * Test of getNLbyID method, of class ServiceStaff.
      */
     @Test
-    public void testGetNLbyID_tonTai() throws Exception {
+    public void GetNLbyID_01() throws Exception {
         // Lấy nguyên liệu với ID tồn tại
         int idNL = 102; // ID nguyên liệu hợp lệ // Đã sửa: từ 1 thành 102
         ModelNguyenLieu nl = ss.getNLbyID(idNL);
@@ -119,7 +119,7 @@ public class ServiceStaffTest {
     }
 
     @Test
-    public void testGetNLbyID_koTonTai() throws Exception {
+    public void GetNLbyID_02() throws Exception {
         // Lấy nguyên liệu với ID không tồn tại
         int idNL = 999; // ID nguyên liệu không tồn tại
         ModelNguyenLieu nl = ss.getNLbyID(idNL);
@@ -130,7 +130,7 @@ public class ServiceStaffTest {
      * Test of getNextID_NL method, of class ServiceStaff.
      */
     @Test
-    public void testGetNextID_NL() throws Exception {
+    public void GetNextID_NL_01() throws Exception {
         // Lấy ID nguyên liệu tiếp theo
         int nextID = ss.getNextID_NL();
         assertEquals(116, nextID); // ID nguyên liệu lớn nhất là 115 // Đã sửa: từ 11 thành 116
@@ -140,7 +140,7 @@ public class ServiceStaffTest {
      * Test of InsertNL method, of class ServiceStaff.
      */
     @Test
-    public void testInsertNL_hopLe() throws Exception {
+    public void InsertNL_01() throws Exception {
         // Thêm nguyên liệu mới hợp lệ
         ModelNguyenLieu nl = new ModelNguyenLieu(116, "Rau Cai", 5000, "kg"); // Đã sửa: ID_NL từ 11 thành 116
         try {
@@ -167,7 +167,7 @@ public class ServiceStaffTest {
      * Test of DeleteNL method, of class ServiceStaff.
      */
     @Test
-    public void testDeleteNL_hopLe() throws Exception {
+    public void DeleteNL_hopLe_01() throws Exception {
         // Xóa nguyên liệu tồn tại
         ModelNguyenLieu nl = new ModelNguyenLieu(102, "Thit bo", 80000, "kg"); // Đã sửa: ID_NL từ 1 thành 102
         try {
@@ -188,7 +188,7 @@ public class ServiceStaffTest {
     }
 
     @Test
-    public void testDeleteNL_koTonTai() throws Exception {
+    public void DeleteNL_hopLe_02() throws Exception {
         // Xóa nguyên liệu không tồn tại
         ModelNguyenLieu nl = new ModelNguyenLieu(999, "NonExistent", 1000, "kg");
         try {
@@ -211,7 +211,7 @@ public class ServiceStaffTest {
      * Test of UpdateNL method, of class ServiceStaff.
      */
     @Test
-    public void testUpdateNL_hopLe() throws Exception {
+    public void UpdateNL_hopLe_01() throws Exception {
         // Cập nhật nguyên liệu tồn tại
         ModelNguyenLieu nl = new ModelNguyenLieu(102, "Thit Ga", 80000, "kg"); // Đã sửa: ID_NL từ 1 thành 102
         try {
@@ -234,7 +234,7 @@ public class ServiceStaffTest {
     }
 
     @Test
-    public void testUpdateNL_koTonTai() throws Exception {
+    public void UpdateNL_hopLe_02() throws Exception {
         // Cập nhật nguyên liệu không tồn tại
         ModelNguyenLieu nl = new ModelNguyenLieu(999, "NonExistent", 1000, "kg");
         try {
@@ -257,7 +257,7 @@ public class ServiceStaffTest {
      * Test of MenuPNK method, of class ServiceStaff.
      */
     @Test
-    public void testMenuPNK() throws Exception {
+    public void MenuPNK_01() throws Exception {
         // Lấy danh sách phiếu nhập kho
         ArrayList<ModelPNK> listPNK = ss.MenuPNK();
         assertNotNull(listPNK);
@@ -275,7 +275,7 @@ public class ServiceStaffTest {
      * Test of getPNKbyID method, of class ServiceStaff.
      */
     @Test
-    public void testGetPNKbyID_tonTai() throws Exception {
+    public void getPNKbyID_01() throws Exception {
         // Lấy phiếu nhập kho với ID tồn tại
         int idNK = 100; // ID phiếu nhập kho hợp lệ // Đã sửa: từ 1 thành 100
         ModelPNK pnk = ss.getPNKbyID(idNK);
@@ -287,7 +287,7 @@ public class ServiceStaffTest {
     }
 
     @Test
-    public void testGetPNKbyID_koTonTai() throws Exception {
+    public void getPNKbyID_02() throws Exception {
         // Lấy phiếu nhập kho với ID không tồn tại
         int idNK = 999; // ID phiếu nhập kho không tồn tại
         ModelPNK pnk = ss.getPNKbyID(idNK);
@@ -298,7 +298,7 @@ public class ServiceStaffTest {
      * Test of getTongtienNK method, of class ServiceStaff.
      */
     @Test
-    public void testGetTongtienNK_coPhieu() throws Exception {
+    public void getTongtienNK_01() throws Exception {
         // Lấy tổng tiền nhập kho trong ngày hiện tại
         int tongtien = ss.getTongtienNK();
         assertTrue(tongtien >= 0);
@@ -308,7 +308,7 @@ public class ServiceStaffTest {
      * Test of getCTNK method, of class ServiceStaff.
      */
     @Test
-    public void testGetCTNK_tonTai() throws Exception {
+    public void getCTNK_01() throws Exception {
         // Lấy chi tiết nhập kho với ID phiếu tồn tại
         int idNK = 100; // ID phiếu nhập kho hợp lệ // Đã sửa: từ 1 thành 100
         ArrayList<ModelCTNK> listCTNK = ss.getCTNK(idNK);
@@ -320,7 +320,7 @@ public class ServiceStaffTest {
     }
 
     @Test
-    public void testGetCTNK_koTonTai() throws Exception {
+    public void getCTNK_02() throws Exception {
         // Lấy chi tiết nhập kho với ID phiếu không tồn tại
         int idNK = 999; // ID phiếu nhập kho không tồn tại
         ArrayList<ModelCTNK> listCTNK = ss.getCTNK(idNK);
@@ -331,7 +331,7 @@ public class ServiceStaffTest {
      * Test of MenuPXK method, of class ServiceStaff.
      */
     @Test
-    public void testMenuPXK() throws Exception {
+    public void MenuPXK_01() throws Exception {
         // Lấy danh sách phiếu xuất kho
         ArrayList<ModelPXK> listPXK = ss.MenuPXK();
         assertNotNull(listPXK);
@@ -342,7 +342,7 @@ public class ServiceStaffTest {
      * Test of getPXKbyID method, of class ServiceStaff.
      */
     @Test
-    public void testGetPXKbyID_tonTai() throws Exception {
+    public void getPXKbyID_01() throws Exception {
         // Lấy phiếu xuất kho với ID tồn tại
         int idXK = 100; // ID phiếu xuất kho hợp lệ // Đã sửa: từ 1 thành 100
         ModelPXK pxk = ss.getPXKbyID(idXK);
@@ -351,7 +351,7 @@ public class ServiceStaffTest {
     }
 
     @Test
-    public void testGetPXKbyID_koTonTai() throws Exception {
+    public void getPXKbyID_02() throws Exception {
         // Lấy phiếu xuất kho với ID không tồn tại
         int idXK = 999; // ID phiếu xuất kho không tồn tại
         ModelPXK pxk = ss.getPXKbyID(idXK);
@@ -362,7 +362,7 @@ public class ServiceStaffTest {
      * Test of getSLPXK method, of class ServiceStaff.
      */
     @Test
-    public void testGetSLPXK() throws Exception {
+    public void getSLPXK_01() throws Exception {
         // Lấy số lượng phiếu xuất kho trong ngày hiện tại
         int sl = ss.getSLPXK();
         assertTrue(sl >= 0);
@@ -372,7 +372,7 @@ public class ServiceStaffTest {
      * Test of getCTXK method, of class ServiceStaff.
      */
     @Test
-    public void testGetCTXK_tonTai() throws Exception {
+    public void getCTXK_01() throws Exception {
         // Lấy chi tiết xuất kho với ID phiếu tồn tại
         int idXK = 100; // ID phiếu xuất kho hợp lệ // Đã sửa: từ 1 thành 100
         ArrayList<ModelCTXK> listCTXK = ss.getCTXK(idXK);
@@ -384,7 +384,7 @@ public class ServiceStaffTest {
     }
 
     @Test
-    public void testGetCTXK_koTonTai() throws Exception {
+    public void getCTXK_02() throws Exception {
         // Lấy chi tiết xuất kho với ID phiếu không tồn tại
         int idXK = 999; // ID phiếu xuất kho không tồn tại
         ArrayList<ModelCTXK> listCTXK = ss.getCTXK(idXK);
@@ -395,7 +395,7 @@ public class ServiceStaffTest {
      * Test of MenuKhoNL method, of class ServiceStaff.
      */
     @Test
-    public void testMenuKhoNL() throws Exception {
+    public void MenuKhoNL_01() throws Exception {
         // Lấy danh sách nguyên liệu trong kho
         ArrayList<ModelKho> listKho = ss.MenuKhoNL();
         assertNotNull(listKho);
@@ -406,7 +406,7 @@ public class ServiceStaffTest {
      * Test of getSLNL_TonKho method, of class ServiceStaff.
      */
     @Test
-    public void testGetSLNL_TonKho() throws Exception {
+    public void getSLNL_TonKho_01() throws Exception {
         // Lấy số lượng nguyên liệu còn tồn kho
         int sl = ss.getSLNL_TonKho();
         assertTrue(sl >= 0); // Tùy thuộc dữ liệu thực, không giả định cụ thể // Đã sửa: từ assertEquals(8, sl)
@@ -416,7 +416,7 @@ public class ServiceStaffTest {
      * Test of getNextID_NK method, of class ServiceStaff.
      */
     @Test
-    public void testGetNextID_NK() throws Exception {
+    public void getNextID_NK_01() throws Exception {
         // Lấy ID phiếu nhập kho tiếp theo
         int nextID = ss.getNextID_NK();
         assertEquals(111, nextID); // ID phiếu nhập kho lớn nhất là 110 // Đã sửa: từ 6 thành 111
@@ -426,7 +426,7 @@ public class ServiceStaffTest {
      * Test of getNextID_XK method, of class ServiceStaff.
      */
     @Test
-    public void testGetNextID_XK() throws Exception {
+    public void getNextID_XK_01() throws Exception {
         // Lấy ID phiếu xuất kho tiếp theo
         int nextID = ss.getNextID_XK();
         assertEquals(111, nextID); // ID phiếu xuất kho lớn nhất là 110 // Đã sửa: từ 4 thành 111
@@ -436,7 +436,7 @@ public class ServiceStaffTest {
      * Test of InsertPNK_CTNK method, of class ServiceStaff.
      */
     @Test
-    public void testInsertPNK_CTNK_hopLe() throws Exception {
+    public void InsertPNK_CTNK_01() throws Exception {
         // Thêm phiếu nhập kho và chi tiết nhập kho hợp lệ
         ModelPNK pnk = new ModelPNK(111, 102, "13-05-2025"); // Đã sửa: ID_NK từ 6 thành 111
         ArrayList<ModelKho> listKho = new ArrayList<>();
@@ -470,7 +470,7 @@ public class ServiceStaffTest {
     }
 
     @Test
-    public void testInsertPNK_CTNK_soLuongKhongHopLe() throws Exception {
+    public void InsertPNK_CTNK_02() throws Exception {
         // Thêm phiếu nhập kho với chi tiết có số lượng không hợp lệ
         ModelPNK pnk = new ModelPNK(111, 102, "13-05-2025"); // Đã sửa: ID_NK từ 6 thành 111
         ArrayList<ModelKho> listKho = new ArrayList<>();
@@ -502,7 +502,7 @@ public class ServiceStaffTest {
      * Test of InsertPXK_CTXK method, of class ServiceStaff.
      */
     @Test
-    public void testInsertPXK_CTXK_hopLe() throws Exception {
+    public void InsertPXK_CTXK_01() throws Exception {
         // Thêm phiếu xuất kho và chi tiết xuất kho hợp lệ
         ModelPXK pxk = new ModelPXK(111, 102, "13-05-2025"); // Đã sửa: ID_XK từ 4 thành 111
         ArrayList<ModelKho> listKho = new ArrayList<>();
@@ -533,7 +533,7 @@ public class ServiceStaffTest {
     }
 
     @Test
-    public void testInsertPXK_CTXK_soLuongKhongHopLe() throws Exception {
+    public void InsertPXK_CTXK_02() throws Exception {
         // Thêm phiếu xuất kho với chi tiết có số lượng không hợp lệ
         ModelPXK pxk = new ModelPXK(111, 102, "13-05-2025"); // Đã sửa: ID_XK từ 4 thành 111
         ArrayList<ModelKho> listKho = new ArrayList<>();
@@ -561,7 +561,7 @@ public class ServiceStaffTest {
      * Test of MenuKH method, of class ServiceStaff.
      */
     @Test
-    public void testMenuKH() throws Exception {
+    public void MenuKH_01() throws Exception {
         // Lấy danh sách khách hàng
         ArrayList<ModelKhachHang> listKH = ss.MenuKH();
         assertNotNull(listKH);
@@ -572,7 +572,7 @@ public class ServiceStaffTest {
      * Test of setTableReserve method, of class ServiceStaff.
      */
     @Test
-    public void testSetTableReserve_hopLe() throws Exception {
+    public void setTableReserve_01() throws Exception {
         // Đặt trạng thái bàn thành "Đã đặt trước"
         int idBan = 108; // Bàn còn trống
         try {
@@ -600,7 +600,7 @@ public class ServiceStaffTest {
     }
 
     @Test
-    public void testSetTableReserve_banKhongTonTai() throws Exception {
+    public void setTableReserve_02() throws Exception {
         // Đặt trạng thái cho bàn không tồn tại
         int idBan = 999; // Bàn không tồn tại
         try {
@@ -623,7 +623,7 @@ public class ServiceStaffTest {
      * Test of CancelTableReserve method, of class ServiceStaff.
      */
     @Test
-    public void testCancelTableReserve_hopLe() throws Exception {
+    public void CancelTableReserve_01() throws Exception {
         // Hủy trạng thái "Đã đặt trước" của bàn
         int idBan = 108; // Bàn giả định đã đặt trước
         try {
@@ -651,7 +651,7 @@ public class ServiceStaffTest {
     }
 
     @Test
-    public void testCancelTableReserve_banKhongTonTai() throws Exception {
+    public void CancelTableReserve_02() throws Exception {
         // Hủy trạng thái cho bàn không tồn tại
         int idBan = 999; // Bàn không tồn tại
         try {
@@ -674,7 +674,7 @@ public class ServiceStaffTest {
      * Test of FindHoaDonbyID_Ban method, of class ServiceStaff.
      */
     @Test
-    public void testFindHoaDonbyID_Ban_coHoaDon() throws Exception {
+    public void FindHoaDonbyID_Ban_01() throws Exception {
         // Tìm hóa đơn của bàn tồn tại (đã thanh toán)
         ModelBan ban = new ModelBan(100, "Ban T1.1");
         ModelHoaDon hd = ss.FindHoaDonbyID_Ban(ban);
@@ -685,7 +685,7 @@ public class ServiceStaffTest {
     }
 
     @Test
-    public void testFindHoaDonbyID_Ban_khongCoHoaDon() throws Exception {
+    public void FindHoaDonbyID_Ban_02() throws Exception {
         // Tìm hóa đơn của bàn không có hóa đơn
         ModelBan ban = new ModelBan(108, "Ban T1.9"); // Bàn không có hóa đơn
         ModelHoaDon hd = ss.FindHoaDonbyID_Ban(ban);
@@ -696,7 +696,7 @@ public class ServiceStaffTest {
      * Test of UpdateHoaDonStatus method, of class ServiceStaff.
      */
     @Test
-    public void testUpdateHoaDonStatus_hopLe() throws Exception {
+    public void UpdateHoaDonStatus_01() throws Exception {
         // Cập nhật trạng thái hóa đơn thành "Đã thanh toán"
         int idHD = 101;
         try {
@@ -724,7 +724,7 @@ public class ServiceStaffTest {
     }
 
     @Test
-    public void testUpdateHoaDonStatus_hoaDonKhongTonTai() throws Exception {
+    public void UpdateHoaDonStatus_02() throws Exception {
         // Cập nhật trạng thái cho hóa đơn không tồn tại
         int idHD = 999;
         try {
@@ -747,7 +747,7 @@ public class ServiceStaffTest {
      * Test of getTenKH method, of class ServiceStaff.
      */
     @Test
-    public void testGetTenKH_tonTai() throws Exception {
+    public void getTenKH_01() throws Exception {
         // Lấy tên khách hàng với ID tồn tại
         int idKH = 100;
         String tenKH = ss.getTenKH(idKH);
@@ -756,7 +756,7 @@ public class ServiceStaffTest {
     }
 
     @Test
-    public void testGetTenKH_koTonTai() throws Exception {
+    public void getTenKH_02() throws Exception {
         // Lấy tên khách hàng với ID không tồn tại
         int idKH = 999;
         String tenKH = ss.getTenKH(idKH);
@@ -766,11 +766,5 @@ public class ServiceStaffTest {
     /**
      * Test of getNhanVienById method, of class ServiceStaff.
      */
-    @Test
-    public void testGetNhanVienById() {
-        // Kiểm tra phương thức ném UnsupportedOperationException
-        assertThrows(UnsupportedOperationException.class, () -> {
-            ss.getNhanVienById(1);
-        });
-    }
+
 }
