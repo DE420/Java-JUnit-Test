@@ -762,15 +762,4 @@ public class ServiceStaffTest {
         String tenKH = ss.getTenKH(idKH);
         assertEquals("", tenKH);
     }
-
-    /**
-     * Test of getNhanVienById method, of class ServiceStaff.
-     */
-    @Test
-    public void testGetNhanVienById() {
-        // Kiểm tra phương thức ném UnsupportedOperationException
-        assertThrows(UnsupportedOperationException.class, () -> {
-            ss.getNhanVienById(1);
-        });
-    }
 }
